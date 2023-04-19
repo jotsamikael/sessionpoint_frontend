@@ -1,0 +1,32 @@
+<div class="contain-login">
+    <div class="login-box">
+        <p>Connexion</p>
+        <form [formGroup]="connexionForm" (submit)="onSubmit()">
+            <div class="form-login">
+                <mat-form-field appearance="outline">
+                    <mat-label>Username</mat-label>
+                    <input matInput placeholder="Username" [formControlName]="'username'" >
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput placeholder="Password" type="password" [formControlName]="'password'">
+                    <mat-icon matSuffix>key</mat-icon>
+                    <!-- <mat-hint>Hint</mat-hint> -->
+                </mat-form-field>
+                <div class="checkbox">
+                    <mat-checkbox color="primary">Remember me</mat-checkbox>
+                </div>
+                <button mat-flat-button [disabled]="!connexionForm.valid"
+                [ngClass]="!connexionForm.valid == true ? 'disable-button' : 'valid-button'">Login</button>
+                <div>Forgot password? <a [routerLink]="['/reset']">Reset password</a></div>
+            </div>
+        </form>
+    </div>
+    <form action="" class="form-login">
+        
+    </form>
+</div>
+<app-footer></app-footer>
+
